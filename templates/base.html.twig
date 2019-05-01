@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Kuro kainos visuose lietuvos miestuose - Vilniuje, Kaune, Klaipėdoje. Dyzelino kainos, Dujų kainos, Benzino kainos.">
+    <meta name="keywords" content="Kuro kaina; Kaina; Dyzelio kaina; Dyzelino kaina; Benzino kaina; Vilniuje kuras; Dyzelis Vilniuje; Dujos Kaunas; Dujos Vilnius">
+    <link rel="stylesheet" href="{{ asset('build/css/main.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <title>kurokaina.lt</title>
+</head>
+<body>
+<div class="container">
+    <div class="row" style="margin-top: 35%">
+        <div class="col-md-12 text-center landing-text">
+            <span class="h3">Domenas parduodamas. Susisiekti galite užpildę savo el. paštą ir žinutę.</span>
+        </div>
+    </div>
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    <div class="row mt-5 justify-content-center">
+        {% for message in app.flashes('success') %}
+            <div class="col-md-5 text-center alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <div class="col-md-12 text-center">
+            {{ form_widget(form.sender, {'attr': {'style': 'height: 4vh; width: 25vw; border-radius: 4px; border-style: none; border: 0; opacity: 0.8', 'placeholder': 'Jūsų el. pašto adresas'} }) }}
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-12 text-center">
+            {{ form_widget(form.message, {'attr': {
+                'style': 'height: 10vh; width: 25vw; border-radius: 4px; border-style: none; border: 0; opacity: 0.8', 'placeholder': 'Jūsų žinutė'} }) }}
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-12 text-center">
+            {{ form_row(form.submit) }}
+        </div>
+    </div>
+    {{ form_end(form) }}
+</div>
+</body>
+</html>
