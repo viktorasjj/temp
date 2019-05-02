@@ -46,7 +46,7 @@ class MessageType extends AbstractType
                     'attr' =>
                         [
                             'class' => 'btn btn-secondary',
-                            'style' => 'width: 10vw',
+                            'style' => 'min-width: 10vw',
                         ],
                 ])
             ->getForm();
